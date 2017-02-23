@@ -1,6 +1,6 @@
 import sys;
 import argparse;
-from run import runDFA;
+from main import runDFA;
 
 parser = argparse.ArgumentParser(
     description='Python DFA Implementation'
@@ -45,10 +45,8 @@ parser.add_argument(
 
 args = vars(parser.parse_args());
 
-if args['inputFileName'] != None:
-    runDFA(args['dfaFileName'], args['inputFileName'], None, args['verbose'], False);
-elif args['interactive']:
-    runDFA(args['dfaFileName'], args['inputFileName'], None, args['verbose'], True);
+if (args['inputFileName'] != None) or args['interactive']:
+    runDFA(args['dfaFileName'], args['inputFileName'], None, args['verbose'], args['interactive']);
 elif args['inputList']:
     inputs = [line.strip() for line in args['inputList']];
     runDFA(args['dfaFileName'], args['inputFileName'], inputs, args['verbose'], False);

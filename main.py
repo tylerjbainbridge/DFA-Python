@@ -21,11 +21,6 @@ def runDFA(dfaFileName, inputFileName, stdInInputs, verbose, interactive):
             sanitizedInput = inputString.strip();
             print sanitizedInput + ' ----> ' + dfa.runWithInput(list(sanitizedInput));
 
-    elif stdInInputs != None:
-        for inputString in stdInInputs:
-            sanitizedInput = inputString.strip();
-            print sanitizedInput + ' ----> ' + dfa.runWithInput(list(sanitizedInput));
-
     elif interactive:
         print "interactive mode";
         print "type exit to leave\n";
@@ -35,3 +30,8 @@ def runDFA(dfaFileName, inputFileName, stdInInputs, verbose, interactive):
                 break;
             else:
                 print inputString + ' ----> ' + dfa.runWithInput(list(inputString));
+
+    elif stdInInputs != None:
+        for inputString in stdInInputs:
+            sanitizedInput = inputString.strip();
+            print sanitizedInput + ' ----> ' + dfa.runWithInput(list(sanitizedInput));
