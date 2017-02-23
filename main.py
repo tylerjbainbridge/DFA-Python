@@ -1,5 +1,5 @@
 import json;
-from DFAClass import DFA;
+from DFACheck import DFA;
 from Parser import Parser;
 
 def runDFA(dfaFileName, inputFileName, stdInInputs, verbose, interactive):
